@@ -1,5 +1,5 @@
 // importing from react
-import { BrowserRouter, RouterProvider } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 // importing router
 import router from './config/router';
 // importing stylesheet
