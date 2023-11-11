@@ -32,7 +32,7 @@ export default function Home() {
                     <h1 className="small-heading">Past Events</h1>
 
                     <div className="flex jstf-ctr">
-                        <div className="black-button">
+                        <div className="black-button" onClick={navigate("/events")}>
                             View All Past Events
                             <MdArrowForwardIos className="left-arrow" />
                         </div>

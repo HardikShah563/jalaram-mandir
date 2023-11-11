@@ -1,13 +1,16 @@
 import { Outlet, createBrowserRouter } from "react-router-dom";
 // importing components
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 // importing pages
 import Layout from "../pages/Layout";
 import Home from "../pages/Home";
 import JalaramBappa from "../pages/JalaramBappa";
 import History from "../pages/History";
 import Team from "../pages/Team";
-import Footer from "../components/Footer";
+import Events from "../pages/Events";
+import JoinUs from "../pages/JoinUs";
+import Login from "../pages/Login";
 
 const router = createBrowserRouter([
     {
@@ -32,6 +35,15 @@ const router = createBrowserRouter([
                         element: <Team />
                     }
                 ],
+            }, {
+                path: "/events",
+                element: <Events />,
+            }, {
+                path: "/join-us",
+                element: <JoinUs />,
+            }, {
+                path: "/login",
+                element: <Login />,
             }
         ],
     }

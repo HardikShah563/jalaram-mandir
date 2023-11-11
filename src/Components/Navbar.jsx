@@ -19,14 +19,14 @@ export default function Navbar() {
         <>
             <nav className="nav">
                 <div className="nav-items">
-                    <div className="nav-logo">
+                    <div className="nav-logo cur" onClick={() => {navigate("/")}}>
                         <h1>Jalaram Mandir</h1>
                     </div>
 
                     <div className={`nav-links ${showNav && "active"}`}>
                         <div className="dropdown">
                             <li>
-                                <div className="link-name">About</div>
+                                <div className="link-name cur">About</div>
                             </li>
                             <div className="dropdown-content">
                                 <div onClick={() => navigate("/about/jalaram-bappa")}>Jalaram Bappa</div>
@@ -37,7 +37,7 @@ export default function Navbar() {
 
                         <div className="dropdown">
                             <li>
-                                <div className="link-name" onClick={() => navigate("/events")}>Events</div>
+                                <div className="link-name cur" onClick={() => navigate("/events")}>Events</div>
                             </li>
                             <div className="dropdown-content">
                             </div>
@@ -45,16 +45,7 @@ export default function Navbar() {
 
                         <div className="dropdown">
                             <li>
-                                <div className="link-name" onClick={() => navigate("/join-us")}>Join Us</div>
-                            </li>
-                            <div className="dropdown-content">
-                                {/* drop down items */}
-                            </div>
-                        </div>
-
-                        <div className="dropdown">
-                            <li>
-                                <div className="link-name" onClick={() => navigate("/donate")}>Donate</div>
+                                <div className="link-name cur" onClick={() => navigate("/join-us")}>Join Us</div>
                             </li>
                             <div className="dropdown-content">
                                 {/* drop down items */}
@@ -63,7 +54,16 @@ export default function Navbar() {
 
                         <div className="dropdown">
                             <li>
-                                <div className="link-name" onClick={() => navigate("/login")}>Login</div>
+                                <div className="link-name cur" onClick={() => navigate("/donate")}>Donate</div>
+                            </li>
+                            <div className="dropdown-content">
+                                {/* drop down items */}
+                            </div>
+                        </div>
+
+                        <div className="dropdown">
+                            <li>
+                                <div className="link-name cur" onClick={() => navigate("/login")}>Login</div>
                             </li>
                         </div>
                     </div>
