@@ -5,6 +5,7 @@
     --secondary-dark: #0 00000;
 
     --radius-small: 10px;
+    --radius-big: 20px;
 }
 
 * {
@@ -58,7 +59,6 @@ button,
 
 .w-80 {
     width: 80%;
-    margin: auto auto;
 }
 
 .title {
@@ -66,9 +66,9 @@ button,
 }
 
 .subtitle {
-    font-size: 84px;
+    font-size: 64px;
     margin-block: 10px;
-    line-height: 84px;
+    line-height: 64px;
     overflow: visible;
 }
 
@@ -104,4 +104,31 @@ button,
 
 .left-arrow {
     fill: var(--primary);
+}
+
+@media (max-width: 800px) {
+    .title {
+        font-size: 48px;
+    }
+
+    .subtitle {
+        font-size: 44px;
+        line-height: 44px;
+    }
+}
+
+@media (max-width: 400px) {
+    .title {
+        font-size: 28px;
+    }
+
+    .subtitle {
+        font-size: 34px;
+        line-height: 34px;
+        text-align: center;
+    }
+
+    .w-80 {
+        width: 95%;
+    }
 }
