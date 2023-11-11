@@ -6,6 +6,7 @@ import { MdArrowForwardIos } from "react-icons/md";
 import "../style/home.css";
 import { useNavigate } from "react-router-dom";
 import UpcomingEvent from "../components/UpcomingEvent";
+import PastEvent from "../components/PastEvent";
 
 export default function Home() {
     // creating variable responsible for web navigation
@@ -33,9 +34,9 @@ export default function Home() {
                     <h1 className="subtitle main-title">Our <br />Upcoming Events</h1>
 
                     <div className="events">
-                        <UpcomingEvent 
+                        <UpcomingEvent
                             eventName={"Jalaram Jayanti 2023"}
-                            eventLocation={"Nilkanth Kutir Building, Bhandup Station Rd, Mumbai - 400078"}
+                            eventLocation={"Bhandup"}
                             eventDate={"19th October 2023"}
                             eventStartTime={"8:30"}
                         />
@@ -43,8 +44,21 @@ export default function Home() {
 
                     <h1 className="small-heading">Past Events</h1>
 
+                    <div className="events">
+                        <PastEvent
+                            eventName={"Jalaram Jayanti"}
+                            eventLocation={"Bhandup"}
+                            eventDate={"10 May 2023"}
+                        />
+                        <PastEvent
+                            eventName={"Shri Jalaram Jayanti"}
+                            eventLocation={"Mulund"}
+                            eventDate={"14 Nov 2018"}
+                        />
+                    </div>
+
                     <div className="flex jstf-ctr">
-                        <div className="black-button" onClick={() => {navigate("/events")}}>    
+                        <div className="black-button" onClick={() => { navigate("/events") }}>
                             View All Past Events
                             <MdArrowForwardIos className="left-arrow" />
                         </div>
