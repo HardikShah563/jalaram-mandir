@@ -102,11 +102,11 @@ a hr {
 
     .nav-links {
         position: absolute;
-        z-index: 100;
+        z-index: 200;
         background-color: var(--primary);
-        margin: 0 0;
+        margin: 0px 0px;
         display: block;
-        top: 60px;
+        top: 55px;
         width: 98vw;
         margin: auto auto;
         height: 0;
@@ -122,19 +122,11 @@ a hr {
         overflow: scroll;
     }
 
-    .nav-links li {
-        justify-content: center;
-        text-align: left;
-        font-weight: 600;
-        padding-inline: 0px;
-        margin-inline: 20px;
-    }
-
 
     .nav-links li p,
     .nav-links li div {
         font-size: 16px;
-        font-weight: 400;
+        font-weight: 600;
         padding: 20px 0px;
     }
 
@@ -150,8 +142,8 @@ a hr {
         box-shadow: none;
         text-align: left;
         min-width: 250px;
-        border-left: 1px solid var(--white);
+        border-left: 1px solid var(--secondary);
         border-radius: 0px;
-        margin-left: 20px;
+        margin-left: 0px;
     }
 }

@@ -15,6 +15,11 @@ export default function Navbar() {
         setShowNav(prevState => !prevState);
     }
 
+    function logoutHandler() {
+        // perform logout operation
+        // clear the session variables as well as the localhost
+    }
+
     return (
         <>
             <nav className="nav">
@@ -64,6 +69,18 @@ export default function Navbar() {
                         <div className="dropdown">
                             <li>
                                 <div className="link-name cur" onClick={() => navigate("/login")}>Login</div>
+                            </li>
+                        </div>
+
+                        <div className="dropdown">
+                            <li>
+                                <div className="link-name cur" onClick={logoutHandler}>Log Out</div>
+                            </li>
+                        </div>
+
+                        <div className="dropdown">
+                            <li>
+                                <div className="link-name cur" onClick={() => navigate("/dashboard")}>Dashboard</div>
                             </li>
                         </div>
                     </div>

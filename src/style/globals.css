@@ -1,5 +1,6 @@
 :root {
     --primary: #ffffff;
+    --primary-dark: #ececec;
     --secondary: #1E2226;
     --secondary-light: #2E3235;
     --secondary-dark: #0 00000;
@@ -51,6 +52,10 @@ button,
 }
 
 .gap-5 {
+    gap: 5px;
+}
+
+.gap-10 {
     gap: 5px;
 }
 

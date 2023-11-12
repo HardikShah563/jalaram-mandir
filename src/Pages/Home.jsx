@@ -73,6 +73,18 @@ export default function Home() {
                     />
                 </div>
 
+                <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/O5Pmz7nNMXY?si=zdNStuf3tkjt8p6Y"
+                    title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    className="youtube-iframe flex"
+                >
+                </iframe>
+
                 <a href="https://www.shreejalarammandir.org/">https://www.shreejalarammandir.org/</a>
             </div>
         </>

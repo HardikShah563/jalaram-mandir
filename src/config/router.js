@@ -2,6 +2,7 @@ import { Outlet, createBrowserRouter } from "react-router-dom";
 // importing components
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import SideBar from "../components/SideBar";
 // importing pages
 import Layout from "../pages/Layout";
 import Home from "../pages/Home";
@@ -44,6 +45,27 @@ const router = createBrowserRouter([
             }, {
                 path: "/login",
                 element: <Login />,
+            }, {
+                path: "/dashboard",
+                element: <SideBar />,
+                children: [
+                    {
+                        path: "/dashboard",
+                        element: "Hello World"
+                    }, {
+                        path: "/dashboard/donation-entry",
+                        element: "donation entry",
+                    }, {
+                        path: "/dashboard/event-master",
+                        element: "event master",
+                    }, {
+                        path: "/dashboard/reciepts",
+                        element: "bill template",
+                    }, {
+                        path: "/dashboard/*",
+                        element: "",
+                    }
+                ],
             }
         ],
     }
