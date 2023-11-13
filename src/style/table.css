@@ -1,0 +1,87 @@
+.table {
+    width: 90%;
+    height: 80vh;
+    overflow: scroll;
+    margin: auto auto;
+    border: 1px solid var(--secondary-light);
+    border-radius: var(--radius-small);
+}
+
+.table-heading {
+    width: 100%;
+}
+
+.tr {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 2vw;
+}
+
+#tr {
+    background-color: var(--secondary);
+}
+
+.th {
+    color: var(--primary);
+}
+
+.name {
+    width: 300px;
+    min-width: 100px;
+}
+
+.addr {
+    width: 200px;
+    min-width: 100px;
+}
+
+.purpose {
+    width: 200px;
+    min-width: 150px;
+}
+
+.amt {
+    width: 100px;
+    min-width: 80px;
+    text-align: center;
+}
+
+.amt-arrow {
+    margin-left: 5px;
+    fill: green;
+}
+
+.action {
+    width: 80px;
+    min-width: 40px;
+    text-align: center;
+}
+
+.mail {
+    fill: var(--primary);
+    font-size: 24px;
+    padding: 4px;
+    background-color: var(--secondary);
+    border-radius: var(--radius-big);
+}
+
+@media (max-width: 700px) {
+    .table {
+        overflow-x: scroll !important;
+    }
+
+    .purpose {
+        display: none;
+    }
+
+    .amt-arrow {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) {
+    .addr {
+        display: none;
+    }
+}

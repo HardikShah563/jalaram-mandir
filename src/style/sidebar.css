@@ -36,13 +36,13 @@
     justify-content: right;
 }
 
-.sidebar.collapse .sidebar-arrow {
-    transform: rotateY(0deg);
+.collapse .sidebar-arrow {
+    transform: rotateY(180deg);
 }
 
 .sidebar-arrow {
     font-size: 30px;
-    transform: rotateY(180deg);
+    transform: rotateY(00deg);
 }
 
 .level-icon {
@@ -67,12 +67,11 @@
 @media (max-width: 800px) {
     .sidebar {
         width: 40vw;
-        height: 85vh;
         margin: 5px 5px;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
     .sidebar {
         position: absolute;
         width: 60vw;
@@ -80,7 +79,7 @@
     }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
     .sidebar {
         position: absolute;
         z-index: 20;

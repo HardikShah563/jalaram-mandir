@@ -58,7 +58,7 @@ export default function SideBar() {
                     </div>
 
                     {links.map(link => (
-                        <div>
+                        <div key={link.link}>
                             {
                                 <div
                                     className={`level ${activeEl === link.link && "active"}`}
