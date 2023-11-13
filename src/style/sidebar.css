@@ -96,6 +96,7 @@
 
     .invisible {
         display: block;
+        position: absolute;
     }
 
     .invisible.collapse {

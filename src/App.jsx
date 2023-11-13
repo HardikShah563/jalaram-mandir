@@ -4,11 +4,14 @@ import { RouterProvider } from "react-router-dom";
 import router from './config/router';
 // importing stylesheet
 import "./style/globals.css";
+import { SessionProvider } from "./config/utils";
 
 export default function App() {
     return (
         <>
-            <RouterProvider router={router} />
+            <SessionProvider>
+                <RouterProvider router={router} />
+            </SessionProvider>
         </>
     );
 };

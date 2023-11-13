@@ -1,0 +1,130 @@
+.form {
+    width: 60vw;
+    margin: 10vh auto 0px auto;
+}
+
+.home-form {
+    margin: 5vh auto;
+}
+
+.input-title {
+    font-size: 16px;
+    padding-left: 2px;
+}
+
+::placeholder {
+    color: var(--secondary-light);
+}
+
+.input-flex {
+    gap: 10px;
+    width: 100%;
+}
+
+.input-box {
+    width: 100%;
+    padding: 4px;
+}
+
+.input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    padding-inline: 10px;
+    margin: 5px auto 10px auto;
+    border: 2px solid var(--secondary);
+    background-color: var(--primary);
+    box-shadow: 4px 4px 0px var(--secondary);
+    outline: none;
+    border-radius: var(--radius-small-small);
+}
+
+.textarea {
+    height: 150px;
+    resize: none;
+}
+
+.form-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    padding-inline: 10px;
+    margin: 5px auto 10px auto;
+    font-size: 20px;
+    margin: 5px auto;
+    color: var(--primary);
+    background-color: var(--secondary);
+    border: 2px solid var(--secondary);
+    border-radius: var(--radius-small-small);
+}
+
+.form-btn:hover {
+    gap: 15px;
+    padding-right: 0px;
+}
+
+.star-div {
+    display: flex;
+    gap: 20px;
+    padding: 10px;
+}
+
+.star-icon {
+    color: var(--kulhad);
+}
+
+.star-icon.yellow {
+    color: var(--yellow);
+}
+
+.star-icon:hover {
+    color: var(--yellow-dark);
+}
+
+.sign-box {
+    width: 30%;
+    padding-block: 10px 5px;
+    text-align: center;
+    background-color: var(--primary);
+    border: var(--norm-border);
+    border-radius: var(--small-radius);
+}
+
+.msg-box {
+    font-weight: 600;
+    box-shadow: none;
+}
+
+@media (max-width: 800px) {
+    .form {
+        width: 50vw;
+    }
+}
+
+@media (max-width: 650px) {
+    .form {
+        width: 85vw;
+        margin-left: 30px;
+    }
+
+    .input-flex {
+        gap: 0px;
+    }
+
+}
+
+@media (max-width: 400px) {
+    .form {
+        margin-left: 0px;
+        width: 95vw;
+    }
+
+    .input-flex {
+        flex-wrap: wrap;
+    }
+}

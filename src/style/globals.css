@@ -1,10 +1,15 @@
 :root {
+    /* colour variables */
     --primary: #ffffff;
     --primary-dark: #ececec;
-    --secondary: #1E2226;
+    --secondary: #252525;
     --secondary-light: #2E3235;
     --secondary-dark: #0 00000;
-
+    --error: #fd4557d3;
+    --success: #2afc46b9;
+    
+    /* sizing variables */
+    --radius-small-small: 5px;
     --radius-small: 10px;
     --radius-big: 20px;
 }
@@ -17,6 +22,11 @@
     overflow-x: hidden;
     color: var(--secondary);
     transition: all 200ms ease-in-out;
+}
+
+::selection {
+    color: var(--primary);
+    background-color: var(--secondary);
 }
 
 li {
@@ -116,6 +126,14 @@ button,
 
 .left-arrow {
     fill: var(--primary);
+}
+
+#green {
+    background-color: var(--success);
+}
+
+#red {
+    background-color: var(--error);
 }
 
 @media (max-width: 800px) {

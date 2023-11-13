@@ -73,6 +73,10 @@ export default function Home() {
                     />
                 </div>
 
+                <div className="w-80 mg-a-a">
+                    <h1 className="title txt-ctr">Aarti</h1>
+                </div>
+
                 <iframe
                     width="560"
                     height="315"
