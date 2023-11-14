@@ -68,6 +68,11 @@
     min-width: 100px;
 }
 
+.location {
+    width: 100px;
+    min-width: 80px;
+}
+
 .purpose {
     width: 200px;
     min-width: 150px;
@@ -76,7 +81,6 @@
 .amt {
     width: 100px;
     min-width: 80px;
-    text-align: center;
 }
 
 .amt-arrow {
@@ -97,7 +101,7 @@
         width: 95% !important;
     }
 
-    .name, .addr, .purpose, .amt, .action {
+    .name, .addr, .purpose, .amt, .action, .location {
         font-size: 12px;
     }
 
@@ -135,6 +139,14 @@
 @media (max-width: 500px) {
     .addr {
         display: none;
+    }
+
+    .event-table .addr {
+        display: block;
+    }
+
+    .event-table .action {
+        justify-content: center;
     }
 
     .action-bar {

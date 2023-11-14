@@ -14,6 +14,7 @@ import JoinUs from "../pages/JoinUs";
 import Login from "../pages/Login";
 import DonationEntry from "../pages/DonationEntry";
 import DonationMaster from "../pages/DonationMaster";
+import EventMaster from "../pages/EventMaster";
 
 const router = createBrowserRouter([
     {
@@ -58,17 +59,26 @@ const router = createBrowserRouter([
                         path: "/dashboard/donation-entry",
                         element: <DonationEntry />,
                     }, {
-                        path: "/dashboard/event-master",
-                        element: "event master",
-                    }, {
                         path: "/dashboard/donation-master",
                         element: <DonationMaster />,
+                    }, {
+                        path: "/dashboard/event-entry",
+                        element: "event entry",
+                    }, {
+                        path: "/dashboard/event-master",
+                        element: <EventMaster />,
                     }, {
                         path: "/dashboard/reciepts",
                         element: "bill template",
                     }, {
+                        path: "/dashboard/bill",
+                        element: "bill",
+                    }, {
+                        path: "/dashboard/update-bill",
+                        element: "update bill",
+                    }, {
                         path: "/dashboard/*",
-                        element: "",
+                        // element: "",
                     }
                 ],
             }

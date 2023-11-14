@@ -23,16 +23,19 @@ export default function SideBar() {
         setActiveEl(path.slice(10, path.length));
     });
 
-    const [links, setLinks] = useState([
+    const links = [
         {
             name: "Dashboard",
             link: ""
         }, {
-            name: "Donation Entry",
+            name: "New Donation",
             link: "/donation-entry",
         }, {
             name: "Event Master",
             link: "/event-master",
+        }, {
+            name: "Create Event",
+            link: "/event-entry",
         }, {
             name: "Donation Master",
             link: "/donation-master",
@@ -41,9 +44,12 @@ export default function SideBar() {
             link: "/reciepts",
         }, {
             name: "Bill Template",
-            link: "/portfolio-entries",
-        },
-    ]);
+            link: "/bill",
+        }, {
+            name: "Update Bill Template",
+            link: "/update-bill"
+        }
+    ];
 
     return (
         <>
