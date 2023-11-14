@@ -55,17 +55,6 @@ export default function Navbar() {
                         {window.location.pathname.slice(0, 10) != "/dashboard" && (
                             <div className="dropdown">
                                 <li>
-                                    <div className="link-name cur" onClick={() => navigate("/join-us")}>Join Us</div>
-                                </li>
-                                <div className="dropdown-content">
-                                    {/* drop down items */}
-                                </div>
-                            </div>
-                        )}
-
-                        {window.location.pathname.slice(0, 10) != "/dashboard" && (
-                            <div className="dropdown">
-                                <li>
                                     <div className="link-name cur" onClick={() => navigate("/donate")}>Donate</div>
                                 </li>
                                 <div className="dropdown-content">

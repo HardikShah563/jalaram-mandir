@@ -21,7 +21,7 @@ export default function Home() {
                     src={process.env.PUBLIC_URL + "/Assets/jbm-logo.png"}
                     alt="jalaram bhakt mandal logo"
                 />
-                <h1 className="txt-ctr title main-title">|| Jai Jalaram ||</h1>
+                <h1 className="txt-ctr title">|| Jai Jalaram ||</h1>
                 <img
                     className="main-img w-100 mg-a-a"
                     src={
@@ -70,6 +70,34 @@ export default function Home() {
                     </div>
                 </div>
 
+                <div className="w-80 mg-a-a">
+                    <h1 className="title margin-top-bottom-20">About</h1>
+
+                    <div className="about-contents">
+                        <div className="about-bappa-img">
+                            <img
+                                className="about-bappa-img"
+                                src={
+                                    process.env.PUBLIC_URL +
+                                    "/Assets/jalaram-bappa.png"
+                                }
+                                alt="jalaram bappa image"
+                            />
+                        </div>
+
+                        <div className="about-content-text">
+                            <div className="main-text">
+                                Shree Jalaram Bapa was born in the year 1799 (i.e. 4-11-1799) in the village Virpur, Gujarat. His mother, Rajbai was very fond of serving sadhus and saints. No sadhu and saint could go from Virpur without receiving the hospitality from Rajbai. Shree Jalaram Bapa's father's name was Pradhan Thakkar, who was engaged in business. At the tender age of 16, Jalaram Bapa married Virbai, daughter of Thakkar Pragji Somaiya. Jalaram Bapa was however not inclined to live household life and to continue to do business with his father. He was mostly engaged in serving sadhus and saints. He separated himself from his father's business and stayed with his uncle, Valjibhai, who was very fond of Jalaram.
+                            </div>
+
+                            <div className="black-button" onClick={() => { navigate("/about/jalaram-bappa") }}>
+                                Read More
+                                <MdArrowForwardIos className="left-arrow" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div className="marquee-div">
                     <Marquee
                         limit={20}
@@ -78,8 +106,17 @@ export default function Home() {
                     />
                 </div>
 
+                <img
+                    className="absolute flower-img-1"
+                    src={
+                        process.env.PUBLIC_URL +
+                        "/Assets/flowers1.png"
+                    }
+                    alt="flower image"
+                />
+
                 <div className="w-80 mg-a-a">
-                    <h1 className="title txt-ctr">Aarti</h1>
+                    <h1 className="subtitle txt-ctr margin-top-bottom-20">Jalaram Bappa Ni Aarti</h1>
                 </div>
 
                 <iframe

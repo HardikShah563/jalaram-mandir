@@ -88,12 +88,15 @@ button,
 
 .title {
     font-size: 96px;
+    line-height: 100px;
+    height: 100px;
+    overflow: hidden;
 }
 
 .subtitle {
     font-size: 64px;
-    margin-block: 10px;
     line-height: 64px;
+    margin-block: 10px;
     overflow: visible;
 }
 
@@ -115,7 +118,7 @@ button,
 }
 
 .margin-top-bottom-20 {
-    margin-bottom: 20px;
+    margin-block: 20px;
 }
 
 .black-button {
@@ -175,7 +178,7 @@ button,
 
 @media (max-width: 800px) {
     .title {
-        font-size: 48px;
+        font-size: 56px;
     }
 
     .subtitle {
@@ -224,7 +227,7 @@ button,
 
 @media (max-width: 400px) {
     .title {
-        font-size: 28px;
+        font-size: 42px;
     }
 
     .subtitle {

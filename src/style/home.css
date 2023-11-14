@@ -1,3 +1,7 @@
+.main-logo {
+    width: 150px;
+}
+
 .main-title {
     margin-block: 20px;
 }
@@ -7,6 +11,20 @@
     text-shadow: 0px 0px 10px #ffd044;
 }
 
+.about-contents {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 50px;
+}
+
+.about-bappa-img {
+    width: 250px;
+}
+
+.about-contents .main-text {
+    text-align: justify;
+}
+
 .youtube-iframe {
     width: 60vw;
     height: 500px;
@@ -14,8 +32,27 @@
     border-radius: var(--radius-big);
 }
 
-.main-logo {
-    width: 150px;
+.flower-img-1 {
+    right: 0px;
+    width: 200px;
+    z-index: -1;
+}
+
+.youtube-iframe {
+    margin: 5vw auto;
+    width: 60vw;
+    height: 40vw;
+}
+
+@media (max-width: 1000px) {
+    .about-contents .main-text {
+        font-size: 16px;
+    }
+
+    .about-contents {
+        gap: 20px;
+    }
+    
 }
 
 @media (max-width: 800px) {
@@ -28,6 +65,34 @@
     .main-quote {
         font-size: 24px;
     }
+
+    .flower-img-1 {
+        right: 0px;
+        width: 100px;
+    }
+
+    .about-content-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .youtube-iframe {
+        width: 80vw;
+        height: 60vw;
+    }
+}
+
+@media (max-width: 700px) {
+    .about-contents {
+        display: flex;
+        flex-wrap: wrap-reverse;
+    }
+
+    .about-bappa-img {
+        width: 60%;
+        margin: auto auto;
+    }
 }
 
 @media (max-width: 400px) {
@@ -39,5 +104,15 @@
 
     .main-quote {
         font-size: 5vw;
+    }
+
+    .flower-img-1 {
+        right: 0px;
+        width: 80px;
+    }
+
+    .about-bappa-img {
+        width: 80%;
+        margin: auto auto;
     }
 }
