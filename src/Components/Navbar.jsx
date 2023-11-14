@@ -24,65 +24,79 @@ export default function Navbar() {
         <>
             <nav className="nav">
                 <div className="nav-items">
-                    <div className="nav-logo cur" onClick={() => {navigate("/")}}>
+                    <div className="nav-logo cur" onClick={() => { navigate("/") }}>
                         <h1>Jalaram Mandir</h1>
                     </div>
 
                     <div className={`nav-links ${showNav && "active"}`}>
-                        <div className="dropdown">
-                            <li>
-                                <div className="link-name cur">About</div>
-                            </li>
-                            <div className="dropdown-content">
-                                <div onClick={() => navigate("/about/jalaram-bappa")}>Jalaram Bappa</div>
-                                <div onClick={() => navigate("/about/history")}>History</div>
-                                <div onClick={() => navigate("/team")}>Team</div>
+                        {window.location.pathname.slice(0, 10) != "/dashboard" && (
+                            <div className="dropdown">
+                                <li>
+                                    <div className="link-name cur">About</div>
+                                </li>
+                                <div className="dropdown-content">
+                                    <div onClick={() => navigate("/about/jalaram-bappa")}>Jalaram Bappa</div>
+                                    <div onClick={() => navigate("/about/history")}>History</div>
+                                    <div onClick={() => navigate("/team")}>Team</div>
+                                </div>
                             </div>
-                        </div>
+                        )}
 
-                        <div className="dropdown">
-                            <li>
-                                <div className="link-name cur" onClick={() => navigate("/events")}>Events</div>
-                            </li>
-                            <div className="dropdown-content">
+                        {window.location.pathname.slice(0, 10) != "/dashboard" && (
+                            <div className="dropdown">
+                                <li>
+                                    <div className="link-name cur" onClick={() => navigate("/events")}>Events</div>
+                                </li>
+                                <div className="dropdown-content">
+                                </div>
                             </div>
-                        </div>
+                        )}
 
-                        <div className="dropdown">
-                            <li>
-                                <div className="link-name cur" onClick={() => navigate("/join-us")}>Join Us</div>
-                            </li>
-                            <div className="dropdown-content">
-                                {/* drop down items */}
+                        {window.location.pathname.slice(0, 10) != "/dashboard" && (
+                            <div className="dropdown">
+                                <li>
+                                    <div className="link-name cur" onClick={() => navigate("/join-us")}>Join Us</div>
+                                </li>
+                                <div className="dropdown-content">
+                                    {/* drop down items */}
+                                </div>
                             </div>
-                        </div>
+                        )}
 
-                        <div className="dropdown">
-                            <li>
-                                <div className="link-name cur" onClick={() => navigate("/donate")}>Donate</div>
-                            </li>
-                            <div className="dropdown-content">
-                                {/* drop down items */}
+                        {window.location.pathname.slice(0, 10) != "/dashboard" && (
+                            <div className="dropdown">
+                                <li>
+                                    <div className="link-name cur" onClick={() => navigate("/donate")}>Donate</div>
+                                </li>
+                                <div className="dropdown-content">
+                                    {/* drop down items */}
+                                </div>
                             </div>
-                        </div>
+                        )}
 
-                        <div className="dropdown">
-                            <li>
-                                <div className="link-name cur" onClick={() => navigate("/login")}>Login</div>
-                            </li>
-                        </div>
+                        {login ?
+                            (
+                                <div className="dropdown">
+                                    <li>
+                                        <div className="link-name cur" onClick={() => navigate("/login")}>Login</div>
+                                    </li>
+                                </div>
+                            ) : (
+                                <>
+                                    <div className="dropdown">
+                                        <li>
+                                            <div className="link-name cur" onClick={() => navigate("/dashboard")}>Dashboard</div>
+                                        </li>
+                                    </div>
 
-                        <div className="dropdown">
-                            <li>
-                                <div className="link-name cur" onClick={logoutHandler}>Log Out</div>
-                            </li>
-                        </div>
-
-                        <div className="dropdown">
-                            <li>
-                                <div className="link-name cur" onClick={() => navigate("/dashboard")}>Dashboard</div>
-                            </li>
-                        </div>
+                                    <div className="dropdown">
+                                        <li>
+                                            <div className="link-name cur" onClick={logoutHandler}>Log Out</div>
+                                        </li>
+                                    </div>
+                                </>
+                            )
+                        }
                     </div>
                 </div>
 
