@@ -10,7 +10,7 @@ import JalaramBappa from "../pages/JalaramBappa";
 import History from "../pages/History";
 import Team from "../pages/Team";
 import Events from "../pages/Events";
-import JoinUs from "../pages/JoinUs";
+import Donate from "../pages/Donate";
 import Login from "../pages/Login";
 import DonationEntry from "../pages/DonationEntry";
 import DonationMaster from "../pages/DonationMaster";
@@ -44,8 +44,8 @@ const router = createBrowserRouter([
                 path: "/events",
                 element: <Events />,
             }, {
-                path: "/join-us",
-                element: <JoinUs />,
+                path: "/donation",
+                element: <Donate />,
             }, {
                 path: "/login",
                 element: <Login />,
