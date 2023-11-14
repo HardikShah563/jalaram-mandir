@@ -15,6 +15,7 @@ import Login from "../pages/Login";
 import DonationEntry from "../pages/DonationEntry";
 import DonationMaster from "../pages/DonationMaster";
 import EventMaster from "../pages/EventMaster";
+import BillTemplate from "../pages/BillTemplate";
 
 const router = createBrowserRouter([
     {
@@ -72,7 +73,7 @@ const router = createBrowserRouter([
                         element: "bill template",
                     }, {
                         path: "/dashboard/bill",
-                        element: "bill",
+                        element: <BillTemplate />,
                     }, {
                         path: "/dashboard/update-bill",
                         element: "update bill",

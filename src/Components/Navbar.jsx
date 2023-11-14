@@ -25,7 +25,7 @@ export default function Navbar() {
             <nav className="nav">
                 <div className="nav-items">
                     <div className="nav-logo cur" onClick={() => { navigate("/") }}>
-                        <h1>Jalaram Mandir</h1>
+                        <h1>Jalaram Bhakt Mandal (Bhandup)</h1>
                     </div>
 
                     <div className={`nav-links ${showNav && "active"}`}>
@@ -35,9 +35,9 @@ export default function Navbar() {
                                     <div className="link-name cur">About</div>
                                 </li>
                                 <div className="dropdown-content">
-                                    <div onClick={() => navigate("/about/jalaram-bappa")}>Jalaram Bappa</div>
-                                    <div onClick={() => navigate("/about/history")}>History</div>
-                                    <div onClick={() => navigate("/team")}>Team</div>
+                                    <div onClick={() => navigate("/about/jalaram-bappa")}>Jalaram Bappa History</div>
+                                    <div onClick={() => navigate("/about/history")}>Jalaram Bhakt Mandal Bhandup</div>
+                                    {/* <div onClick={() => navigate("/team")}>Team</div> */}
                                 </div>
                             </div>
                         )}

@@ -16,6 +16,11 @@ export default function Home() {
         <>
             <div className="page">
                 {/* main section */}
+                <img
+                    className="mg-a-a main-logo"
+                    src={process.env.PUBLIC_URL + "/Assets/jbm-logo.png"}
+                    alt="jalaram bhakt mandal logo"
+                />
                 <h1 className="txt-ctr title main-title">|| Jai Jalaram ||</h1>
                 <img
                     className="main-img w-100 mg-a-a"
@@ -89,7 +94,7 @@ export default function Home() {
                 >
                 </iframe>
 
-                <a href="https://www.shreejalarammandir.org/">https://www.shreejalarammandir.org/</a>
+                {/* <a href="https://www.shreejalarammandir.org/">https://www.shreejalarammandir.org/</a> */}
             </div>
         </>
     );

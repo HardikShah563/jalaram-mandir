@@ -1,0 +1,120 @@
+.bill-page {
+    overflow: scroll !important;
+}
+
+.bill {
+    --height: 190mm;
+    /* original height: 148mm */
+    /* original width: 210mm */
+    height: var(--height);
+    width: calc(1.418 * var(--height));
+    border: 1px solid var(--black);
+    justify-content: space-between;
+    margin: 0vh auto 0vh auto;
+    border: 1px solid var(--secondary);
+}
+
+.title {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 180px;
+    padding: 10px 20px 0px 20px;
+}
+
+.title-logo img {
+    width: 150px;
+}
+
+.title-text * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text1 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-block: 10px;
+}
+
+.text2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.text3, .text4 {
+    font-size: 18px;
+}
+
+.mar-10 {
+    margin-top: 20px;
+}
+
+.details-block {
+    display: flex;
+    width: 80%;
+    margin: auto auto;
+}
+
+.block1 {
+    padding-top: 20px;
+}
+
+.block2 {
+    padding-bottom: 20px;
+}
+
+.detail {
+    padding: 5px;
+}
+
+.first-child {
+    width: 590px;
+}
+
+.word-details {
+    margin: 20px 0px 20px 100px;
+}
+
+.word-details p {
+    padding: 5px;
+}
+
+.thank-you h1 {
+    text-align: center;
+    margin-block: 10px;
+}
+
+.extra-contents {
+    text-align: center;
+    border: 1px solid var(--black);
+    width: 90%;
+    margin: 10px auto;
+    padding-inline: 50px;
+    padding-block: 10px;
+}
+
+.ext-content {
+    padding: 5px;
+    font-weight: 500;
+}
+
+.quote {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.gift-section {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 10px auto;
+    align-items: center;
+}
+
+.gift-qty {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid var(--black);
+}
