@@ -1,10 +1,10 @@
 .form {
     width: 60vw;
-    margin: 10vh auto 0px auto;
+    margin: 10vh auto;
 }
 
-.home-form {
-    margin: 5vh auto;
+.login-form {
+    width: 40vw;
 }
 
 .input-title {
@@ -66,33 +66,6 @@
 .form-btn:hover {
     gap: 15px;
     padding-right: 0px;
-}
-
-.star-div {
-    display: flex;
-    gap: 20px;
-    padding: 10px;
-}
-
-.star-icon {
-    color: var(--kulhad);
-}
-
-.star-icon.yellow {
-    color: var(--yellow);
-}
-
-.star-icon:hover {
-    color: var(--yellow-dark);
-}
-
-.sign-box {
-    width: 30%;
-    padding-block: 10px 5px;
-    text-align: center;
-    background-color: var(--primary);
-    border: var(--norm-border);
-    border-radius: var(--small-radius);
 }
 
 .msg-box {

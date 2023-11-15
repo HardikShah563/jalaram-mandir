@@ -20,6 +20,8 @@ const initialState = {
     currentRecipet: localStorage.getItem("currentReciept")
         ? JSON.parse(localStorage.getItem("currentReciept"))
         : null,
+    
+    recieptDetails: "",
 };
 
 function reducer(state, action) {

@@ -4,7 +4,6 @@ export default function BillTemplate() {
     return (
         <>
             <div>
-                <div className="black-button">Edit Bill Details</div>
                 <Bill 
                     donorName={"Hardik Shah"}
                     recieptNo={1}

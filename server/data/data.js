@@ -665,16 +665,19 @@ const users = [
         "name": "Hardik",
         "email": "hardikts@gmail.com",
         "password": bcrypt.hashSync("hardik1234"),
+        "isAdmin": true,
     }, 
     {
         "name": "Tushar",
         "email": "tusharcomtek@gmail.com",
         "password": bcrypt.hashSync("tushar1234"),
+        "isAdmin": true,
     },
     {
         "name": "Jalaram Mandir",
         "email": "hardikts@gmail.com",
         "password": bcrypt.hashSync("jalaram1234"),
+        "isAdmin": false,
     }
 ];
 
