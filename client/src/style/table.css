@@ -48,7 +48,8 @@
 }
 
 .tr:hover {
-    box-shadow: 0px 1px 2px var(--primary-dark);
+    box-shadow: 0px 1px 4px var(--secondary-light);
+    /* background-color: #f5f5f5; */
 }
 
 .th {

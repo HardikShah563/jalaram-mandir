@@ -6,6 +6,8 @@ import cors from "cors";
 // importing routes
 import seedRouter from "./routes/seedRoutes.js";
 import userRouter from "./routes/userRoutes.js";
+import donationRouter from "./routes/donationRoutes.js";
+import eventRouter from "./routes/eventRoutes.js";
 
 dotenv.config();
 
@@ -26,6 +28,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use('/api/seed', seedRouter);
 app.use('/api/user', userRouter);
+app.use('/api/donation', donationRouter);
+app.use('/api/events', eventRouter);
 
 const port = process.env.PORT || 5000;
 

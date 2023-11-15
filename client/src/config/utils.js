@@ -17,11 +17,14 @@ const initialState = {
         ? JSON.parse(localStorage.getItem('userInfo'))
         : null,
 
-    currentRecipet: localStorage.getItem("currentReciept")
+    currentReciept: localStorage.getItem("currentReciept")
         ? JSON.parse(localStorage.getItem("currentReciept"))
         : null,
-    
+
     recieptDetails: "",
+    eventDetails: localStorage.getItem('eventDetails')
+        ? JSON.parse(localStorage.getItem('eventDetails'))
+        : null,
 };
 
 function reducer(state, action) {
@@ -44,7 +47,7 @@ function reducer(state, action) {
                 ...state,
                 currentRecipet: action.payload
             };
-        
+
         case "RECIEPT_CLEAR":
             return {
                 ...state,

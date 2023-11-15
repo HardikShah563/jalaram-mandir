@@ -1,6 +1,7 @@
 // importing from react
 import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 // importing stylesheet
 import "../style/form.css";
 // importing icons
@@ -12,14 +13,14 @@ import { Session } from "../config/utils";
 export default function DonationEntry() {
     const navigate = useNavigate();
 
-    const { state } = useContext(Session);
-    const { userInfo } = state;
+    const { state, dispatch: ctxDispatch } = useContext(Session);
+    const { userInfo, eventDetails } = state;
 
-    // useEffect(() => {
-    //     if (!userInfo) {
-    //         navigate('/login');
-    //     }
-    // }, []);
+    useEffect(() => {
+        if (!userInfo) {
+            navigate('/login');
+        }
+    }, []);
 
     const [formData, setFormData] = useState({
         name: "",
@@ -29,10 +30,13 @@ export default function DonationEntry() {
         mode: "",
         amount: null,
         panNo: "", //pan number required only if amount exceeds 5k
+        eventName: eventDetails && eventDetails.eventName || "",
     });
 
-    const [msg, setMsg] = useState("Entry Successful!");
-    const [color, setColor] = useState("green");
+    const date = new Date().getDate() + "-" + new Date().getMonth() + "-" + new Date().getFullYear();
+
+    const [msg, setMsg] = useState("");
+    const [color, setColor] = useState("");
 
     function handleChange(event) {
         const { name, value, type, checked } = event.target;
@@ -44,13 +48,41 @@ export default function DonationEntry() {
 
     async function handleSubmit(event) {
         event.preventDefault();
-        // database operation
-        setMsg("Yayy! Submit ho raha hai!");
-        await delay(1000);
-        setMsg("Redrirecting... wait");
-        await delay(500);
-        setMsg("Entry Successful!");
-        navigate("/dashboard/reciepts");
+        try {
+            if (!formData.eventName) {}
+            const { data } = await axios.post('http://localhost:5000/api/donation/new', {
+                name: formData.name,
+                address: formData.address,
+                phoneNo: formData.phoneNo,
+                email: formData.email,
+                mode: formData.mode,
+                amount: formData.amount,
+                panNo: formData.panNo,
+                eventName: formData.eventName,
+            });
+
+            ctxDispatch({
+                type: "RECIEPT_SET",
+                payload: { ...formData, eventDate: date }
+            });
+
+            if (data.message === "success") {
+                localStorage.setItem("currentReciept", JSON.stringify({ ...formData, eventDate: date }));
+                setMsg("Yayy! Submit ho raha hai!");
+                setColor("green");
+                await delay(1000);
+                setMsg("Redrirecting... wait");
+                await delay(500);
+                setMsg("Entry Successful!");
+                navigate("/dashboard/reciepts");
+            }
+            else {
+                setMsg(data.message);
+                setColor("red");
+            }
+        } catch (error) {
+            console.log(error.message);
+        }
     }
 
     return (
@@ -59,9 +91,25 @@ export default function DonationEntry() {
                 <h1 className="subtitle txt-ctr">Donation Entry</h1>
 
                 <form onSubmit={handleSubmit} className="form home-form">
-                    <div className="input msg-box" id={color}>
-                        {msg}
+                    <div className="input-box">
+                        <h3>Event Name: {eventDetails && eventDetails.eventName || "doesn't exists"}</h3>
                     </div>
+
+                    <div className="input-box">
+                        <h3>Event Date: {date}</h3>
+                    </div>
+
+                    <br />
+
+                    {msg &&
+                        (
+                            <div className="input-box">
+                                <div className="input msg-box" id={color}>
+                                    {msg}
+                                </div>
+                            </div>
+                        )
+                    }
 
                     <div className="input-flex flex">
                         <div className="input-box">
@@ -77,6 +125,7 @@ export default function DonationEntry() {
                                 onChange={handleChange}
                                 autoComplete="off"
                                 placeholder="Full Name"
+                                required
                             />
                         </div>
 
@@ -93,6 +142,7 @@ export default function DonationEntry() {
                                 onChange={handleChange}
                                 autoComplete="off"
                                 placeholder="Address"
+                                required
                             />
                         </div>
                     </div>
@@ -111,6 +161,7 @@ export default function DonationEntry() {
                                 onChange={handleChange}
                                 autoComplete="off"
                                 placeholder="Phone Number"
+                                required
                             />
                         </div>
 
@@ -127,6 +178,7 @@ export default function DonationEntry() {
                                 onChange={handleChange}
                                 autoComplete="off"
                                 placeholder="Email Address"
+                                required
                             />
                         </div>
                     </div>
@@ -190,7 +242,7 @@ export default function DonationEntry() {
                     <div className="input-box">
                         <button
                             className="form-btn gap-10 cur"
-                            onClick={handleSubmit}
+                            type="submit"
                         >
                             Submit <MdArrowForwardIos className="left-arrow" />
                         </button>
