@@ -19,7 +19,7 @@ import { GoArrowDownLeft } from "react-icons/go";
 import { MdOutlineMail } from "react-icons/md";
 import { FiEdit2 } from "react-icons/fi";
 
-export default function DonationMaster() {
+export default function DonationReports() {
     const [donorData, setDonorData] = useState([]);
     useEffect(() => {
         setDonorData(data.donors);

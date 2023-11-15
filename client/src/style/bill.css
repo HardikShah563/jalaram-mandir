@@ -3,23 +3,28 @@
 }
 
 .bill {
-    --height: 190mm;
+    /* A5 size bill dimensions */
     /* original height: 148mm */
     /* original width: 210mm */
+    --height: 190mm;
     height: var(--height);
     width: calc(1.418 * var(--height));
     border: 1px solid var(--black);
     justify-content: space-between;
-    margin: 0vh auto 0vh auto;
-    border: 1px solid var(--secondary);
+    margin: auto auto;
+    border: 1px solid var(--black);
 }
 
-.title {
+.bill-title {
     display: flex;
     justify-content: space-around;
     width: 100%;
     height: 180px;
     padding: 10px 20px 0px 20px;
+}
+
+.bill-hr {
+    border: 0.5px solid var(--black);
 }
 
 .title-logo img {

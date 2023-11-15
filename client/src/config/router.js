@@ -12,9 +12,10 @@ import Events from "../pages/Events";
 import Donate from "../pages/Donate";
 import Login from "../pages/Login";
 import DonationEntry from "../pages/DonationEntry";
-import DonationMaster from "../pages/DonationMaster";
+import DonationReports from "../pages/DonationReports";
 import EventMaster from "../pages/EventMaster";
 import BillTemplate from "../pages/BillTemplate";
+import Dashboard from "../pages/Dashboard";
 
 const router = createBrowserRouter([
     {
@@ -54,13 +55,13 @@ const router = createBrowserRouter([
                 children: [
                     {
                         path: "/dashboard",
-                        element: "Hello World"
+                        element: <Dashboard />
                     }, {
                         path: "/dashboard/donation-entry",
                         element: <DonationEntry />,
                     }, {
-                        path: "/dashboard/donation-master",
-                        element: <DonationMaster />,
+                        path: "/dashboard/donation-reports",
+                        element: <DonationReports />,
                     }, {
                         path: "/dashboard/event-entry",
                         element: "event entry",

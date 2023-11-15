@@ -16,18 +16,37 @@ const initialState = {
     userInfo: localStorage.getItem('userInfo')
         ? JSON.parse(localStorage.getItem('userInfo'))
         : null,
+
+    currentRecipet: localStorage.getItem("currentReciept")
+        ? JSON.parse(localStorage.getItem("currentReciept"))
+        : null,
 };
 
 function reducer(state, action) {
     switch (action.type) {
         case "USER_SIGNIN":
-            return { ...state, userInfo: action.payload };
+            return {
+                ...state,
+                userInfo: action.payload
+            };
 
         case "USER_SIGNOUT":
             localStorage.removeItem("userInfo");
             return {
                 ...state,
                 userInfo: null,
+            };
+
+        case "RECIEPT_SET":
+            return {
+                ...state,
+                currentRecipet: action.payload
+            };
+        
+        case "RECIEPT_CLEAR":
+            return {
+                ...state,
+                currentRecipet: null
             };
 
         default:

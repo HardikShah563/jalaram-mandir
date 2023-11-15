@@ -65,12 +65,6 @@ export default function Navbar() {
 
                         {login ?
                             (
-                                <div className="dropdown">
-                                    <li>
-                                        <div className="link-name cur" onClick={() => navigate("/login")}>Login</div>
-                                    </li>
-                                </div>
-                            ) : (
                                 <>
                                     <div className="dropdown">
                                         <li>
@@ -83,6 +77,15 @@ export default function Navbar() {
                                             <div className="link-name cur" onClick={logoutHandler}>Log Out</div>
                                         </li>
                                     </div>
+                                </>
+                            ) : (
+                                <>
+                                    <div className="dropdown">
+                                        <li>
+                                            <div className="link-name cur" onClick={() => navigate("/login")}>Login</div>
+                                        </li>
+                                    </div>
+
                                 </>
                             )
                         }

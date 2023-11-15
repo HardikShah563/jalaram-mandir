@@ -95,6 +95,10 @@ a hr {
         justify-content: space-between;
     }
 
+    .nav-logo {
+        font-size: 12px;
+    }
+
     .nav-lines {
         display: block;
         cursor: pointer;

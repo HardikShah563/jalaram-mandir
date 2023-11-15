@@ -7,7 +7,7 @@ export default function Bill(props) {
         <>
             <div className="page bill-page">
                 <div className="bill">
-                    <div className="title">
+                    <div className="bill-title">
                         <div className="title-logo">
                             <img
                                 src={
@@ -24,7 +24,7 @@ export default function Bill(props) {
                             <p className="text4">This Mandal is Registered with Income Tax Under Sec 80G</p>
                         </div>
                     </div>
-                    <hr />
+                    <hr className="bill-hr" />
                     <div className="details-block block1">
                         <div className="detail first-child">Name &emsp;&emsp;&emsp;&emsp;: &ensp;<b>{props.donorName}</b></div>
                         <div className="detail">Reciept No&emsp;&emsp;: &ensp;<b>{props.recieptNo}</b></div>
@@ -33,7 +33,7 @@ export default function Bill(props) {
                         <div className="detail first-child">Address &emsp;&emsp;&emsp;: &ensp;<b>{props.address}</b></div>
                         <div className="detail">Date&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;: &ensp;<b>{props.donationDate}</b></div>
                     </div>
-                    <hr />
+                    <hr className="bill-hr" />
                     <div className="word-details">
                         <p>Purpose of Donation&emsp;&emsp;&ensp;: &ensp;<b>Shri Jalaram Jayanti Utsav - 2023</b></p>
                         <p>Amount in Figure (Rs.)&emsp;&ensp;: &ensp;<b>₹{props.amount}</b></p>
