@@ -10,7 +10,7 @@ export default function Dashboard() {
 
     useEffect(() => {
         if (userInfo) {
-            if (!userInfo.isAdmin) {
+            if (!userInfo.isAdmin === true) {
                 navigate("/dashboard/donation-entry");
                 return;
             }

@@ -70,7 +70,7 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="w-80 mg-a-a">
+                {/* <div className="w-80 mg-a-a">
                     <h1 className="title margin-top-bottom-20">About</h1>
 
                     <div className="about-contents">
@@ -96,7 +96,8 @@ export default function Home() {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
+                <div className="page"></div>
 
                 <div className="marquee-div">
                     <Marquee
@@ -115,21 +116,23 @@ export default function Home() {
                     alt="flower image"
                 />
 
-                <div className="w-80 mg-a-a">
-                    <h1 className="subtitle txt-ctr margin-top-bottom-20">Jalaram Bappa Ni Aarti</h1>
-                </div>
+                <div className="small-page">
+                    <div className="w-80 mg-a-a">
+                        <h1 className="subtitle txt-ctr margin-top-bottom-20">Jalaram Bappa Ni Aarti</h1>
+                    </div>
 
-                <iframe
-                    width="560"
-                    height="315"
-                    src="https://www.youtube.com/embed/O5Pmz7nNMXY?si=zdNStuf3tkjt8p6Y"
-                    title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen
-                    className="youtube-iframe flex"
-                >
-                </iframe>
+                    <iframe
+                        width="560"
+                        height="315"
+                        src="https://www.youtube.com/embed/O5Pmz7nNMXY?si=zdNStuf3tkjt8p6Y"
+                        title="YouTube video player"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                        className="youtube-iframe flex"
+                    >
+                    </iframe>
+                </div>
 
                 {/* <a href="https://www.shreejalarammandir.org/">https://www.shreejalarammandir.org/</a> */}
             </div>

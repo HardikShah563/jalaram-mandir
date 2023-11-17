@@ -47,7 +47,7 @@ button,
 }
 
 .page {
-    padding-block: 5vh;
+    padding-block: 10vh;
 }
 
 .small-page {
@@ -115,6 +115,10 @@ button,
 
 .mg-a-a {
     margin: auto auto;
+}
+
+.margin-bottom-20 {
+    margin-bottom: 20px;
 }
 
 .margin-top-bottom-20 {

@@ -6,7 +6,7 @@ import SideBar from "../components/SideBar";
 // importing pages
 import Home from "../pages/Home";
 import JalaramBappa from "../pages/JalaramBappa";
-import History from "../pages/History";
+import BhaktMandal from "../pages/BhaktMandal";
 import Team from "../pages/Team";
 import Events from "../pages/Events";
 import Donate from "../pages/Donate";
@@ -33,8 +33,8 @@ const router = createBrowserRouter([
                         element: <JalaramBappa />,
                     },
                     {
-                        path: "/about/history",
-                        element: <History />,
+                        path: "/about/mandal",
+                        element: <BhaktMandal />,
                     }, {
                         path: "/about/team",
                         element: <Team />

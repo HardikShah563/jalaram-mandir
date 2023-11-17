@@ -1,15 +1,24 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 // importing stylesheet
 import "../style/navbar.css";
+import { Session } from "../config/utils";
 
 export default function Navbar() {
     // creating variable responsible for web navigation
     const navigate = useNavigate();
 
+    const { state, dispatch: ctxDispatch } = useContext(Session);
+    const { userInfo } = state;
+
     const [login, setLogin] = useState(false);
-    const [admin, setAdmin] = useState(false);
     const [showNav, setShowNav] = useState(false);
+
+    useEffect(() => {
+        if (userInfo) {
+            setLogin(true);
+        }
+    }, []);
 
     function toggleNavbar() {
         setShowNav(prevState => !prevState);
@@ -18,6 +27,11 @@ export default function Navbar() {
     function logoutHandler() {
         // perform logout operation
         // clear the session variables as well as the localhost
+        ctxDispatch({
+            type: "USER_SIGNOUT"
+        });
+        navigate("/");
+        window.location.reload();
     }
 
     return (

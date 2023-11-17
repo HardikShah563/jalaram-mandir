@@ -48,6 +48,7 @@ export default function Login() {
                 setMsg("Redirecting... wait");
                 await delay(500);
                 navigate("/dashboard");
+                window.location.reload();
             }
             else {
                 setMsg(data.message);

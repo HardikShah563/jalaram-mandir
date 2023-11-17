@@ -10,7 +10,7 @@
     justify-content: space-between;
     width: 100%;
     height: 200px;
-    margin: 40px auto;
+    margin: 20px auto;
     border: 2px solid var(--secondary);
     border-radius: var(--radius-small);
     box-shadow: 5px 5px 0px var(--secondary);
@@ -21,10 +21,6 @@
     font-size: 48px;
     font-weight: 600;
     color: var(--secondary);
-}
-
-.upcoming-event-location {
-    font-size: 20px;
 }
 
 .upcoming-details {
@@ -51,10 +47,6 @@
     transform: translateY(-50px);
     width: fit-content;
     overflow: hidden;
-}
-
-.location-icon {
-    font-size: 20px;
 }
 
 .upcoming-event-date-time {

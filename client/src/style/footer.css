@@ -1,6 +1,6 @@
 /* Footer Section */
 .footer {
-    padding: 70px 40px 10px 40px;
+    padding: 40px;
     background-color: var(--primary-dark);
 }
 
@@ -17,16 +17,14 @@
     margin: 20px 0;
 }
 
-.foot-section > li > div {
+.foot-link-name {
     margin: 20px 0;
-    color: var(--black);
     cursor: pointer;
 }
 
-.foot-section > .heading {
+.foot-section .heading {
     text-align: left;
     padding: 0 0 15px 0;
-    color: var(--white);
     font-size: 20px;
     font-weight: 600;
 }
@@ -35,8 +33,7 @@
     width: 200px;
 }
 
-hr {
-    border: 0.5px solid var(--dark-grey);
+.hr {
     width: 90%;
     margin: auto auto;
 }
@@ -92,15 +89,15 @@ hr {
     .footer-logo {
         width: 200px;
     }
+
+    .below-footer-links {
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 @media (max-width: 600px) {
     .foot-section {
         padding-left: 0px;
     }
-}
-
-.green-text {
-    color: var(--dark-green);
-    font-weight: 600;
 }
