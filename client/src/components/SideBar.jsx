@@ -35,7 +35,7 @@ export default function SideBar() {
             link: "/event-master",
         }, {
             name: "Create Event",
-            link: "/event-entry",
+            link: "/create-event",
         }, {
             name: "Donation Reports",
             link: "/donation-reports",

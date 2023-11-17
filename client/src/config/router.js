@@ -16,6 +16,7 @@ import DonationReports from "../pages/DonationReports";
 import EventMaster from "../pages/EventMaster";
 import BillTemplate from "../pages/BillTemplate";
 import Dashboard from "../pages/Dashboard";
+import CreateEvent from "../pages/CreateEvent";
 
 const router = createBrowserRouter([
     {
@@ -63,8 +64,8 @@ const router = createBrowserRouter([
                         path: "/dashboard/donation-reports",
                         element: <DonationReports />,
                     }, {
-                        path: "/dashboard/event-entry",
-                        element: "event entry",
+                        path: "/dashboard/create-event",
+                        element: <CreateEvent />,
                     }, {
                         path: "/dashboard/event-master",
                         element: <EventMaster />,

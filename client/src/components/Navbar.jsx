@@ -86,6 +86,8 @@ export default function Navbar() {
                                         </li>
                                     </div>
 
+                                    <b>|</b>
+
                                     <div className="dropdown">
                                         <li>
                                             <div className="link-name cur" onClick={logoutHandler}>Log Out</div>
