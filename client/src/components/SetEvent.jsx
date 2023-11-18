@@ -24,8 +24,7 @@ const reducer = (state, action) => {
 
 export default function SetEvent(props) {
 
-    const { state, dispatch: ctxDispatch } = useContext(Session);
-    const { currentEvent } = state;
+    const { dispatch: ctxDispatch } = useContext(Session);
 
     const [{ loading, error, events }, dispatch] = useReducer(reducer, {
         loading: true,
@@ -45,7 +44,7 @@ export default function SetEvent(props) {
             type: "EVENT_SET",
             payload: currentlyHappening
         });
-        localStorage.setItem("currentlyHappening", JSON.stringify(currentlyHappening));
+        localStorage.setItem("currentEvent", JSON.stringify(currentlyHappening));
         props.toggleSetEvent();
     }
 

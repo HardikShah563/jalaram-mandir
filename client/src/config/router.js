@@ -17,6 +17,7 @@ import EventMaster from "../pages/EventMaster";
 import BillTemplate from "../pages/BillTemplate";
 import Dashboard from "../pages/Dashboard";
 import CreateEvent from "../pages/CreateEvent";
+import PrintReciept from "../pages/PrintReciept";
 
 const router = createBrowserRouter([
     {
@@ -71,7 +72,7 @@ const router = createBrowserRouter([
                         element: <EventMaster />,
                     }, {
                         path: "/dashboard/reciepts",
-                        element: "bill template",
+                        element: <PrintReciept />,
                     }, {
                         path: "/dashboard/bill",
                         element: <BillTemplate />,

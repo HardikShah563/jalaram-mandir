@@ -23,12 +23,7 @@ export default function DonationEntry() {
         setSetEventView(prevState => !prevState);
     }
 
-    const [currentlyHappening, setCurrentlyHappening] = useState({
-        _id: "",
-        name: "",
-        time: "",
-        date: "",
-    });
+    console.log(currentEvent);
 
     useEffect(() => {
         if (!userInfo) {
@@ -46,6 +41,7 @@ export default function DonationEntry() {
         amount: null,
         panNo: "", //pan number required only if amount exceeds 5k
         eventName: currentEvent && currentEvent.name || null,
+        eventDate: currentEvent && currentEvent.date || null,
     });
 
     const date = new Date().getDate() + "-" + new Date().getMonth() + "-" + new Date().getFullYear();
@@ -63,11 +59,12 @@ export default function DonationEntry() {
 
     async function handleSubmit(event) {
         event.preventDefault();
-        if (!formData.eventName) {
+        if (!currentEvent) {
             setMsg("Event Name not found");
             setColor("red");
             return;
         }
+
         try {
             if (!formData.eventName) { }
             const { data } = await axios.post('http://localhost:5000/api/donation/new', {
@@ -78,18 +75,25 @@ export default function DonationEntry() {
                 mode: formData.mode,
                 amount: formData.amount,
                 panNo: formData.panNo,
-                eventName: "Jalaram Jayanti",
+                eventName: currentEvent.name
             });
 
             ctxDispatch({
                 type: "RECIEPT_SET",
-                payload: { ...formData, eventDate: date }
+                payload: formData
             });
 
             if (data.message === "success") {
-                const recieptNo = String(data.donation._id).substr(-5);
-                localStorage.setItem("currentReciept", JSON.stringify({ ...formData, eventDate: date, recieptNo: recieptNo }));
-                setMsg("Yayy! Submit ho raha hai!");
+                await ctxDispatch({
+                    type: "RECIEPT_SET",
+                    payload: data.donation
+                });
+                localStorage.setItem(
+                    "currentReciept",
+                    JSON.stringify(data.donation)
+                );
+
+                setMsg("Donation Accepted");
                 setColor("green");
                 await delay(1000);
                 setMsg("Redrirecting... wait");
@@ -108,7 +112,7 @@ export default function DonationEntry() {
 
     return (
         <>
-            <div className="mg-a-a page">
+            <div className="mg-a-a">
                 <h1 className="subtitle txt-ctr">Donation Entry</h1>
 
                 <form onSubmit={handleSubmit} className="form home-form">

@@ -29,7 +29,7 @@ donationRouter.post(
             amount: amount,
             panNo: panNo,
             recieptDate: new Date().toDateString(),
-            eventName: ""
+            eventName: eventName
         })) {
             const donation = await Donation.find({name: name, address: address, mode: mode, amount: amount})
             res.send({ message: "success", donation: donation });

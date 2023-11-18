@@ -109,6 +109,10 @@ button,
     text-align: center;
 }
 
+.capitalize {
+    text-transform: capitalize;
+}
+
 .cur {
     cursor: pointer !important;
 }

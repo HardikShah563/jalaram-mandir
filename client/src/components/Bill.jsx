@@ -1,11 +1,12 @@
 import React from "react";
 import "../style/bill.css";
-import { ToWords } from "to-words";
+import { ToWords } from 'to-words';
+const toWords = new ToWords();
 
 export default function Bill(props) {
     return (
         <>
-            <div className="page bill-page">
+            <div className="bill-page margin-top-bottom-20">
                 <div className="bill">
                     <div className="bill-title">
                         <div className="title-logo">
@@ -31,13 +32,13 @@ export default function Bill(props) {
                     </div>
                     <div className="details-block block2">
                         <div className="detail first-child">Address &emsp;&emsp;&emsp;: &ensp;<b>{props.address}</b></div>
-                        <div className="detail">Date&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;: &ensp;<b>{props.donationDate}</b></div>
+                        <div className="detail">Date&emsp;&emsp;&emsp;&emsp;&ensp;&nbsp;: &ensp;<b>{props.date}</b></div>
                     </div>
                     <hr className="bill-hr" />
                     <div className="word-details">
                         <p>Purpose of Donation&emsp;&emsp;&ensp;: &ensp;<b>Shri Jalaram Jayanti Utsav - 2023</b></p>
                         <p>Amount in Figure (Rs.)&emsp;&ensp;: &ensp;<b>₹{props.amount}</b></p>
-                        <p>Amount in Words (Rs.)&nbsp;&emsp;&nbsp;: &ensp;<b>Rupees Five-Hundred One Only</b></p>
+                        <p>Amount in Words (Rs.)&nbsp;&emsp;&nbsp;: &ensp;<b>{toWords.convert(props.amount || 0, { currency: true })}</b></p>
                     </div>
                     <div className="extra-contents">
                         <div className="ext-content">
