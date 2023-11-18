@@ -22,6 +22,11 @@ const initialState = {
         : null,
 
     recieptDetails: "",
+
+    currentEvent: localStorage.getItem('currentEvent')
+        ? JSON.parse(localStorage.getItem('currentEvent'))
+        : null,
+
     eventDetails: localStorage.getItem('eventDetails')
         ? JSON.parse(localStorage.getItem('eventDetails'))
         : null,
@@ -52,6 +57,12 @@ function reducer(state, action) {
             return {
                 ...state,
                 currentRecipet: null
+            };
+
+        case "EVENT_SET":
+            return {
+                ...state,
+                currentEvent: action.payload
             };
 
         default:

@@ -7,7 +7,7 @@ const donations = [
         "phoneNo": "1111111111",
         "mode": "cash",
         "amount": 501,
-        "recieptDate": "11-06-2023",
+        "recieptDate": "2023-06-11",
         "eventName": "Shri Jalaram Jayanti"
     },
     {
@@ -17,7 +17,7 @@ const donations = [
         "phoneNo": "1111111111",
         "mode": "cash",
         "amount": 251,
-        "recieptDate": "11-06-2023",
+        "recieptDate": "2023-06-11",
         "eventName": "Shri Jalaram Jayanti"
     },
 ];
@@ -26,27 +26,27 @@ const events = [
     {
         "name": "Shri Jalaram Jayanti 2023",
         "time": "6:30",
-        "date": "10-4-2023",
+        "date": "2023-04-10",
     },
     {
         "name": "Shri Jalaram Jayanti 2023",
         "time": "6:30",
-        "date": "12-6-2023",
+        "date": "2023-06-12",
     },
     {
         "name": "Shri Jalaram Jayanti 2023",
         "time": "6:30",
-        "date": "13-9-2023",
+        "date": "2023-09-13",
     },
     {
         "name": "Shri Jalaram Jayanti 2023",
         "time": "6:30",
-        "date": "19-11-2023",
+        "date": "2023-11-19",
     },
     {
         "name": "Julelal Jayanti 2024",
         "time": "5:00",
-        "date": "10-1-2024",
+        "date": "2024-01-10",
     }
 ];
 

@@ -19,7 +19,8 @@ donationRouter.post(
         const mode = req.body.mode;
         const amount = req.body.amount;
         const panNo = req.body.panNo;
-        if (Donation.create({
+        const eventName = req.body.eventName;
+        if (await Donation.create({
             name: name,
             address: address,
             phoneNo: phoneNo,
@@ -30,7 +31,8 @@ donationRouter.post(
             recieptDate: new Date().toDateString(),
             eventName: ""
         })) {
-            res.send({ message: "success" });
+            const donation = await Donation.find({name: name, address: address, mode: mode, amount: amount})
+            res.send({ message: "success", donation: donation });
         }
         else {
             res.send({ message: "Some unexpected error occured" });

@@ -9,17 +9,32 @@ import { MdArrowForwardIos } from "react-icons/md";
 // importing from utils
 import { delay } from "../config/utils";
 import { Session } from "../config/utils";
+import SetEvent from "../components/SetEvent";
 
 export default function DonationEntry() {
     const navigate = useNavigate();
 
     const { state, dispatch: ctxDispatch } = useContext(Session);
-    const { userInfo, eventDetails } = state;
+    const { userInfo, currentEvent } = state;
+
+    const [setEventView, setSetEventView] = useState(false);
+
+    function toggleSetEvent() {
+        setSetEventView(prevState => !prevState);
+    }
+
+    const [currentlyHappening, setCurrentlyHappening] = useState({
+        _id: "",
+        name: "",
+        time: "",
+        date: "",
+    });
 
     useEffect(() => {
         if (!userInfo) {
             navigate('/login');
         }
+        setSetEventView(false);
     }, []);
 
     const [formData, setFormData] = useState({
@@ -30,7 +45,7 @@ export default function DonationEntry() {
         mode: "",
         amount: null,
         panNo: "", //pan number required only if amount exceeds 5k
-        eventName: eventDetails && eventDetails.eventName || "",
+        eventName: currentEvent && currentEvent.name || null,
     });
 
     const date = new Date().getDate() + "-" + new Date().getMonth() + "-" + new Date().getFullYear();
@@ -43,13 +58,18 @@ export default function DonationEntry() {
         setFormData(prevFormData => ({
             ...prevFormData,
             [name]: type === "checkbox" ? checked : value,
-        }))
+        }));
     }
 
     async function handleSubmit(event) {
         event.preventDefault();
+        if (!formData.eventName) {
+            setMsg("Event Name not found");
+            setColor("red");
+            return;
+        }
         try {
-            if (!formData.eventName) {}
+            if (!formData.eventName) { }
             const { data } = await axios.post('http://localhost:5000/api/donation/new', {
                 name: formData.name,
                 address: formData.address,
@@ -58,7 +78,7 @@ export default function DonationEntry() {
                 mode: formData.mode,
                 amount: formData.amount,
                 panNo: formData.panNo,
-                eventName: formData.eventName,
+                eventName: "Jalaram Jayanti",
             });
 
             ctxDispatch({
@@ -67,7 +87,8 @@ export default function DonationEntry() {
             });
 
             if (data.message === "success") {
-                localStorage.setItem("currentReciept", JSON.stringify({ ...formData, eventDate: date }));
+                const recieptNo = String(data.donation._id).substr(-5);
+                localStorage.setItem("currentReciept", JSON.stringify({ ...formData, eventDate: date, recieptNo: recieptNo }));
                 setMsg("Yayy! Submit ho raha hai!");
                 setColor("green");
                 await delay(1000);
@@ -92,11 +113,19 @@ export default function DonationEntry() {
 
                 <form onSubmit={handleSubmit} className="form home-form">
                     <div className="input-box">
-                        <h3>Event Name: {eventDetails && eventDetails.eventName || "doesn't exists"}</h3>
+                        {currentEvent && currentEvent.name ? (
+                            <>
+                                <h3>Event Name: {currentEvent.name} (<span className="cur" onClick={() => { toggleSetEvent() }}><u id="text-red">Change Event</u></span>)</h3>
+                            </>
+                        ) : (
+                            <>
+                                <h3>Event Name: <span id="text-red">Doesn't Exist (<span className="cur" onClick={() => { toggleSetEvent() }}><u>Set Event</u></span>)</span></h3>
+                            </>
+                        )}
                     </div>
 
                     <div className="input-box">
-                        <h3>Event Date: {date}</h3>
+                        <h3>Event Date: {currentEvent && currentEvent.date ? currentEvent.date : "Doesn't Exists"}</h3>
                     </div>
 
                     <br />
@@ -178,7 +207,6 @@ export default function DonationEntry() {
                                 onChange={handleChange}
                                 autoComplete="off"
                                 placeholder="Email Address"
-                                required
                             />
                         </div>
                     </div>
@@ -228,9 +256,9 @@ export default function DonationEntry() {
                                 <input
                                     className="input margin-block-5"
                                     type="text"
-                                    name="name"
-                                    id="name"
-                                    value={formData.name}
+                                    name="panNo"
+                                    id="panNo"
+                                    value={formData.panNo}
                                     onChange={handleChange}
                                     autoComplete="off"
                                     placeholder="PAN Number"
@@ -249,6 +277,12 @@ export default function DonationEntry() {
                     </div>
                 </form>
             </div>
+
+            {setEventView && (
+                <SetEvent
+                    toggleSetEvent={toggleSetEvent}
+                />
+            )}
         </>
     );
 };

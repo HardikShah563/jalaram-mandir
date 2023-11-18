@@ -84,9 +84,15 @@ export default function Footer() {
 
             <div className="below-footer-links gap-10">
                 <div className="below-footer-section privacy-policy">
-                    <li><div onclick={() => navigate("/")}><span className="yellow-text">Terms</span></div></li>
-                    <li><div onclick={() => navigate("/")}><span className="yellow-text">Privacy</span></div></li>
-                    <li><div onclick={() => navigate("/")}><span className="yellow-text">Policy</span></div></li>
+                    <li>
+                        <div onClick={() => { navigate("/"); window.scrollTo(0, 0); }}><span className="yellow-text">Terms</span></div>
+                    </li>
+                    <li>
+                        <div onClick={() => { navigate("/"); window.scrollTo(0, 0); }}><span className="yellow-text">Privacy</span></div>
+                    </li>
+                    <li>
+                        <div onClick={() => { navigate("/"); window.scrollTo(0, 0); }}><span className="yellow-text">Policy</span></div>
+                    </li>
                 </div>
 
                 <div className="below-footer-section">

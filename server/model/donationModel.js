@@ -2,7 +2,6 @@ import mongoose from "mongoose";
 
 const donorSchema = mongoose.Schema(
     {
-        recieptNo: { type: Number, required: true },
         name: { type: String, required: true },
         address: { type: String, required: true },
         phoneNo: { type: String },
