@@ -26,6 +26,16 @@ export default function DonationEntry() {
     console.log(currentEvent);
 
     useEffect(() => {
+        const fetchdata = async () => {
+            const { data } = await axios.get('http://localhost:5000/api/donation/max-receipt-no');
+            setFormData(prevState => {
+                return {
+                    ...prevState, receiptNo: (data.receiptNo + 1),
+                }
+            });
+        }
+        fetchdata();
+
         if (!userInfo) {
             navigate('/login');
         }
@@ -33,6 +43,7 @@ export default function DonationEntry() {
     }, []);
 
     const [formData, setFormData] = useState({
+        receiptNo: 0,
         name: "",
         address: "",
         phoneNo: "",
@@ -68,6 +79,7 @@ export default function DonationEntry() {
         try {
             if (!formData.eventName) { }
             const { data } = await axios.post('http://localhost:5000/api/donation/new', {
+                receiptNo: formData.receiptNo,
                 name: formData.name,
                 address: formData.address,
                 phoneNo: formData.phoneNo,
@@ -130,6 +142,12 @@ export default function DonationEntry() {
 
                     <div className="input-box">
                         <h3>Event Date: {currentEvent && currentEvent.date ? currentEvent.date : "Doesn't Exists"}</h3>
+                    </div>
+
+                    <br />
+
+                    <div className="input-box">
+                        <h3>Receipt Number: {formData.receiptNo}</h3>
                     </div>
 
                     <br />
@@ -252,7 +270,7 @@ export default function DonationEntry() {
                     </div>
 
                     <div className="input-flex">
-                        {formData.amount >= 5000 && (
+                        {formData.amount >= 2000 && (
                             <div className="input-box">
                                 <div className="input-title margin-top-15 bobby">
                                     PAN Number

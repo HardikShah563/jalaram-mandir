@@ -50,7 +50,7 @@ export default function Navbar() {
                                 </li>
                                 <div className="dropdown-content">
                                     <div onClick={() => navigate("/about/jalaram-bappa")}>Jalaram Bappa History</div>
-                                    <div onClick={() => navigate("/about/history")}>Jalaram Bhakt Mandal Bhandup</div>
+                                    <div onClick={() => navigate("/about/mandal")}>Jalaram Bhakt Mandal Bhandup</div>
                                     {/* <div onClick={() => navigate("/team")}>Team</div> */}
                                 </div>
                             </div>

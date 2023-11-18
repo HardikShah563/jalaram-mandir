@@ -21,12 +21,14 @@ export default function Dashboard() {
     }, [])
     return (
         <>
-            <div className="page w-100">
+            <div className="w-100">
                 <h1 className="subtitle txt-ctr">Dashboard</h1>
 
+                {/* 
                 <div className="black-button">Load Sample Users Data</div>
                 <div className="black-button">Load Sample Events Data</div>
-                <div className="black-button">Load Sample Donation Data</div>
+                <div className="black-button">Load Sample Donation Data</div> 
+                */}
             </div>
         </>
     );

@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 
 const donorSchema = mongoose.Schema(
     {
+        receiptNo: { type: Number, required: true },
         name: { type: String, required: true },
         address: { type: String, required: true },
         phoneNo: { type: String },
@@ -9,7 +10,7 @@ const donorSchema = mongoose.Schema(
         mode: { type: String, required: true },
         amount: { type: Number, required: true },
         panNo: { type: String },
-        recieptDate: { type: String, required: true },
+        receiptDate: { type: String, required: true },
         eventName: { type: String, required: true },
     }
 );

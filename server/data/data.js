@@ -1,23 +1,23 @@
 // creating sample data
 const donations = [
     {
-        "recieptNo": 1,
+        "receiptNo": 1,
         "name": "Pragji Narshi Bhanushali",
         "address": "Bhandup",
         "phoneNo": "1111111111",
         "mode": "cash",
         "amount": 501,
-        "recieptDate": "2023-06-11",
+        "receiptDate": "2023-06-11",
         "eventName": "Shri Jalaram Jayanti"
     },
     {
-        "recieptNo": 2,
+        "receiptNo": 2,
         "name": "Virchandas Vasanji Somaiya",
         "address": "Bhandup",
         "phoneNo": "1111111111",
         "mode": "cash",
         "amount": 251,
-        "recieptDate": "2023-06-11",
+        "receiptDate": "2023-06-11",
         "eventName": "Shri Jalaram Jayanti"
     },
 ];

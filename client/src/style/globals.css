@@ -62,6 +62,10 @@ button,
     justify-content: center;
 }
 
+.align-ctr {
+    align-items: center;
+}
+
 .txt-jstfy {
     text-align: justify;
 }

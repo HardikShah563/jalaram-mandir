@@ -40,7 +40,7 @@ export default function PrintReciept() {
                     <div id="print-div">
                         <Bill
                             donorName={printInfo.name}
-                            recieptNo={String(printInfo._id).substr(-5)}
+                            recieptNo={printInfo.receiptNo}
                             address={printInfo.address}
                             date={date}
                             amount={printInfo.amount}

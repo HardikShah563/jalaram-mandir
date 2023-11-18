@@ -37,10 +37,7 @@ const router = createBrowserRouter([
                     {
                         path: "/about/mandal",
                         element: <BhaktMandal />,
-                    }, {
-                        path: "/about/team",
-                        element: <Team />
-                    }
+                    },
                 ],
             }, {
                 path: "/events",
